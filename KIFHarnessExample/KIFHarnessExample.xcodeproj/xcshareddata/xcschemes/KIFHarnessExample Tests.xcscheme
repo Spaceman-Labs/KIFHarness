@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Scheme
+   LastUpgradeVersion = "0450"
+   version = "1.7">
+   <BuildAction
+      parallelizeBuildables = "NO"
+      buildImplicitDependencies = "YES">
+      <PreActions>
+         <ExecutionAction
+            ActionType = "Xcode.IDEStandardExecutionActionsCore.ExecutionActionType.ShellScriptAction">
+            <ActionContent
+               title = "Run Script"
+               scriptText = "ruby &quot;${SRCROOT}/Configurations/configurations.rb&quot; --merge Config-KIF.xcconfig &quot;${SRCROOT}/Configurations&quot;">
+               <EnvironmentBuildable>
+                  <BuildableReference
+                     BuildableIdentifier = "primary"
+                     BlueprintIdentifier = "3D28CDFA16A72E180014CDC9"
+                     BuildableName = "KIFHarnessExample.app"
+                     BlueprintName = "KIFHarnessExample"
+                     ReferencedContainer = "container:KIFHarnessExample.xcodeproj">
+                  </BuildableReference>
+               </EnvironmentBuildable>
+            </ActionContent>
+         </ExecutionAction>
+         <ExecutionAction
+            ActionType = "Xcode.IDEStandardExecutionActionsCore.ExecutionActionType.ShellScriptAction">
+            <ActionContent
+               title = "Run Script"
+               scriptText = "file_list=`xcodebuild -project &quot;$PROJECT_FILE_PATH&quot; -target &quot;$TARGET_NAME&quot; -sdk &quot;$SDKROOT&quot; -configuration &quot;$CONFIGURATION&quot; -showBuildSettings | grep &quot;LINK_FILE_LIST_&quot;$BUILD_VARIANTS&quot;_&quot;$NATIVE_ARCH | sed s/[^=]*\=\ //`&#10;touch $file_list">
+               <EnvironmentBuildable>
+                  <BuildableReference
+                     BuildableIdentifier = "primary"
+                     BlueprintIdentifier = "3D28CDFA16A72E180014CDC9"
+                     BuildableName = "KIFHarnessExample.app"
+                     BlueprintName = "KIFHarnessExample"
+                     ReferencedContainer = "container:KIFHarnessExample.xcodeproj">
+                  </BuildableReference>
+               </EnvironmentBuildable>
+            </ActionContent>
+         </ExecutionAction>
+      </PreActions>
+      <PostActions>
+         <ExecutionAction
+            ActionType = "Xcode.IDEStandardExecutionActionsCore.ExecutionActionType.ShellScriptAction">
+            <ActionContent
+               title = "Run Script"
+               scriptText = "ruby &quot;${SRCROOT}/Configurations/configurations.rb&quot; --reset &quot;${SRCROOT}/Configurations&quot;">
+               <EnvironmentBuildable>
+                  <BuildableReference
+                     BuildableIdentifier = "primary"
+                     BlueprintIdentifier = "3D28CDFA16A72E180014CDC9"
+                     BuildableName = "KIFHarnessExample.app"
+                     BlueprintName = "KIFHarnessExample"
+                     ReferencedContainer = "container:KIFHarnessExample.xcodeproj">
+                  </BuildableReference>
+               </EnvironmentBuildable>
+            </ActionContent>
+         </ExecutionAction>
+      </PostActions>
+      <BuildActionEntries>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "3D28CDDE16A72D160014CDC9"
+               BuildableName = "libKIFHarness.a"
+               BlueprintName = "KIFHarness"
+               ReferencedContainer = "container:../KIFHarness/KIFHarnessTemplate/KIFHarness.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "3D28CDFA16A72E180014CDC9"
+               BuildableName = "KIFHarnessExample.app"
+               BlueprintName = "KIFHarnessExample"
+               ReferencedContainer = "container:KIFHarnessExample.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+      </BuildActionEntries>
+   </BuildAction>
+   <TestAction
+      selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
+      selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
+      shouldUseLaunchSchemeArgsEnv = "YES"
+      buildConfiguration = "Debug">
+      <Testables>
+      </Testables>
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "3D28CDFA16A72E180014CDC9"
+            BuildableName = "KIFHarnessExample.app"
+            BlueprintName = "KIFHarnessExample"
+            ReferencedContainer = "container:KIFHarnessExample.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
+   </TestAction>
+   <LaunchAction
+      selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
+      selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
+      launchStyle = "0"
+      useCustomWorkingDirectory = "NO"
+      buildConfiguration = "Debug"
+      ignoresPersistentStateOnLaunch = "NO"
+      debugDocumentVersioning = "YES"
+      allowLocationSimulation = "YES">
+      <BuildableProductRunnable>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "3D28CDFA16A72E180014CDC9"
+            BuildableName = "KIFHarnessExample.app"
+            BlueprintName = "KIFHarnessExample"
+            ReferencedContainer = "container:KIFHarnessExample.xcodeproj">
+         </BuildableReference>
+      </BuildableProductRunnable>
+      <AdditionalOptions>
+      </AdditionalOptions>
+   </LaunchAction>
+   <ProfileAction
+      shouldUseLaunchSchemeArgsEnv = "YES"
+      savedToolIdentifier = ""
+      useCustomWorkingDirectory = "NO"
+      buildConfiguration = "Release"
+      debugDocumentVersioning = "YES">
+      <BuildableProductRunnable>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "3D28CDFA16A72E180014CDC9"
+            BuildableName = "KIFHarnessExample.app"
+            BlueprintName = "KIFHarnessExample"
+            ReferencedContainer = "container:KIFHarnessExample.xcodeproj">
+         </BuildableReference>
+      </BuildableProductRunnable>
+   </ProfileAction>
+   <AnalyzeAction
+      buildConfiguration = "Debug">
+   </AnalyzeAction>
+   <ArchiveAction
+      buildConfiguration = "Release"
+      revealArchiveInOrganizer = "YES">
+   </ArchiveAction>
+</Scheme>
