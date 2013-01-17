@@ -9,6 +9,7 @@
 
 @interface KIFTestScenario (KIFHarness)
 
-// Add Testing Scenarios Here
++ (id)scenarioToTapBlue;
++ (id)scenarioToTapRed;
 
 @end

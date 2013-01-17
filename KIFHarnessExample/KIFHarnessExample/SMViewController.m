@@ -37,6 +37,8 @@
 	} else if (sender == self.orangeButton) {
 		self.colorLabel.text = @"Orange";
 	}
+	
+	self.colorLabel.accessibilityValue = self.colorLabel.text;
 }
 
 @end

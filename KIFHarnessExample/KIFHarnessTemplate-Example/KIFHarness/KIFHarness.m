@@ -7,12 +7,15 @@
 //
 
 #import "KIFHarness.h"
+#import "KIFTestScenario+KIFHarness.h"
+#import "KIFTestStep+KIFHarness.h"
 
 @implementation KIFHarness
 
 - (void)initializeScenarios;
 {
-	// Scenarios should be added to KIFTestScenario+KIFHarness and added here
+	[self addScenario:[KIFTestScenario scenarioToTapBlue]];
+	[self addScenario:[KIFTestScenario scenarioToTapRed]];
 }
 
 @end
