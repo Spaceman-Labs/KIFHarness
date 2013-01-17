@@ -7,6 +7,8 @@
 //
 
 #import "KIFHarness.h"
+#import "KIFTestScenario+KIFHarness.h"
+#import "KIFTestStep+KIFHarness.h"
 
 @implementation KIFHarness
 
