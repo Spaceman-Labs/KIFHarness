@@ -97,6 +97,8 @@ and the following code to the end of its `-application:didFinishLaunchingWithOpt
 #### Write some tests!
 
 At this point, KIFHarness should be ready to go! Choose your testing target and run it with Command+R. If KIFHarness has been added successfully, your application should build without errors and quit abruptly. You should see a log in the console that is something like `Running KIF Tests With KIFHarness!`. At this point, I suggest heading over to [KIF Documentation](https://github.com/square/KIF) and learning a bit about writing KIF tests.
+
+To add tests, look for the file `KIFHarness.h` and follow the steps outlined in the KIF readme. The _very important_ difference in KIFHarness is that scenario and step files should be added to the KFHarness project and **not** your application.
 	
 
 #### Bonus: Write tests without cleaning every build
