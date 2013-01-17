@@ -10,6 +10,8 @@ KIFHarness isolates tests in their own project and target; adding classes to you
 Installation
 ------------
 
+There are a lot of steps here, but if you just follow the steps, everything _should_ "just work".
+
 #### Download KIFHarness
 
 Because it is intended as a template, you _will_ be modifying the KIFHarness project after it is integrated - for this reason, it is recommended that you do NOT install KIFHarness as a git submodule.
@@ -79,7 +81,7 @@ KIFHarness requires that build settings inherit the values for `Preprocessor Mac
 
 Just like in the KIF example, you'll want to add the following code to your application delegate
 
-	if RUN_KIF_TESTS
+	#if RUN_KIF_TESTS
 	#import "EXTestController.h"
 	#endif
 
