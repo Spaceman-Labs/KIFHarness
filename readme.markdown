@@ -84,6 +84,7 @@ Just like in the KIF example, you'll want to add the following code to your appl
 	#endif
 
 and the following code to the end of its -application:didFinishLaunchingWithOptions: method
+
 	#if RUN_KIF_TESTS
     	[[EXTestController sharedInstance] startTestingWithCompletionBlock:^{
         	// Exit after the tests complete so that CI knows we're done
