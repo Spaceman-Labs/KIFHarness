@@ -15,6 +15,7 @@
 - (void)initializeScenarios;
 {
 	// Scenarios should be added to KIFTestScenario+KIFHarness and added here
+	NSLog(@"Running KIF Tests With KIFHarness");
 }
 
 @end
