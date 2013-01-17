@@ -10,7 +10,7 @@ KIFHarness isolates tests in their own project and target; adding classes to you
 Installation
 ------------
 
-There are a lot of steps here, but if you just follow the steps, everything _should_ "just work".
+There are a lot of steps here, but if you just follow the steps, everything _should_ "just work". This is still a work in progress, any feedback is very much welcome.
 
 #### Download KIFHarness
 
@@ -72,7 +72,7 @@ Click the `Build` action. Click the add button and under target and select the K
 
 Xcode resolves build settings by merging them in the following order iOS Default, Config Files, Project Settings, Target Settings. Settings defined later in the order override settings defined earlier. In order for settings to inherit values defined at higher levels you must include `$(inherited)` in the value.
 
-KIFHarness requires that build settings inherit the values for `Preprocessor Macros`, `Header Search Paths` and `Other C Flags` (or `GCC_PREPROCESSOR_DEFINITIONS`, `HEADER_SEARCH_PATHS` and 	`OTHER_LDFLAGS` if you prefer the raw GCC flags.
+KIFHarness requires that build settings inherit the values for `Preprocessor Macros`, `Header Search Paths` and `Other Linker Flags` (or `GCC_PREPROCESSOR_DEFINITIONS`, `HEADER_SEARCH_PATHS` and 	`OTHER_LDFLAGS` if you prefer the raw GCC flags).
 
 [ADD SCREENSHOT]
 
@@ -82,15 +82,15 @@ KIFHarness requires that build settings inherit the values for `Preprocessor Mac
 Just like in the KIF example, you'll want to add the following code to your application delegate
 
 	#if RUN_KIF_TESTS
-	#import "EXTestController.h"
+	#import "KIFHarness.h"
 	#endif
 
-and the following code to the end of its -application:didFinishLaunchingWithOptions: method
+and the following code to the end of its `-application:didFinishLaunchingWithOptions:` method
 
 	#if RUN_KIF_TESTS
-    	[[EXTestController sharedInstance] startTestingWithCompletionBlock:^{
-        	// Exit after the tests complete so that CI knows we're done
-        	exit([[EXTestController sharedInstance] failureCount]);
+    	[[KIFHarness sharedInstance] startTestingWithCompletionBlock:^{
+			// Exit after the tests complete so that CI knows we're done
+			exit([[KIFHarness sharedInstance] failureCount]);
     	}];
 	#endif
 	
