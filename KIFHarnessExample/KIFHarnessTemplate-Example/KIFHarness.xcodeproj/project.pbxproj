@@ -7,27 +7,27 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3D2534B716A7712000A8D1BB /* libKIF.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DF3FCE016A76E6000CA63D2 /* libKIF.a */; };
 		3D28CDE316A72D160014CDC9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D28CDE216A72D160014CDC9 /* Foundation.framework */; };
 		3D28CDE816A72D160014CDC9 /* KIFHarness.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3D28CDE716A72D160014CDC9 /* KIFHarness.h */; };
 		3D28CDEA16A72D160014CDC9 /* KIFHarness.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D28CDE916A72D160014CDC9 /* KIFHarness.m */; };
-		3D28CE9C16A73AD00014CDC9 /* libKIF.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D28CE9816A73AA70014CDC9 /* libKIF.a */; };
 		3DF3FC8816A766DD00CA63D2 /* KIFTestScenario+KIFHarness.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DF3FC8516A766DD00CA63D2 /* KIFTestScenario+KIFHarness.m */; };
 		3DF3FC8C16A7682700CA63D2 /* KIFTestStep+KIFHarness.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DF3FC8B16A7682700CA63D2 /* KIFTestStep+KIFHarness.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		3D28CE9716A73AA70014CDC9 /* PBXContainerItemProxy */ = {
+		3D2534B316A7711D00A8D1BB /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 3D28CE9016A73AA70014CDC9 /* KIF.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = AAB07268139719AC008AF393;
-			remoteInfo = KIF;
-		};
-		3D28CE9A16A73ACC0014CDC9 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 3D28CE9016A73AA70014CDC9 /* KIF.xcodeproj */;
+			containerPortal = 3DF3FCD816A76E6000CA63D2 /* KIF.xcodeproj */;
 			proxyType = 1;
 			remoteGlobalIDString = AAB07267139719AC008AF393;
+			remoteInfo = KIF;
+		};
+		3DF3FCDF16A76E6000CA63D2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3DF3FCD816A76E6000CA63D2 /* KIF.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = AAB07268139719AC008AF393;
 			remoteInfo = KIF;
 		};
 /* End PBXContainerItemProxy section */
@@ -51,11 +51,11 @@
 		3D28CDE616A72D160014CDC9 /* KIFHarness-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "KIFHarness-Prefix.pch"; sourceTree = "<group>"; };
 		3D28CDE716A72D160014CDC9 /* KIFHarness.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KIFHarness.h; sourceTree = "<group>"; };
 		3D28CDE916A72D160014CDC9 /* KIFHarness.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KIFHarness.m; sourceTree = "<group>"; };
-		3D28CE9016A73AA70014CDC9 /* KIF.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = KIF.xcodeproj; path = ../KIF/KIF.xcodeproj; sourceTree = "<group>"; };
 		3DF3FC8416A766DD00CA63D2 /* KIFTestScenario+KIFHarness.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "KIFTestScenario+KIFHarness.h"; sourceTree = "<group>"; };
 		3DF3FC8516A766DD00CA63D2 /* KIFTestScenario+KIFHarness.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "KIFTestScenario+KIFHarness.m"; sourceTree = "<group>"; };
 		3DF3FC8A16A7682700CA63D2 /* KIFTestStep+KIFHarness.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "KIFTestStep+KIFHarness.h"; sourceTree = "<group>"; };
 		3DF3FC8B16A7682700CA63D2 /* KIFTestStep+KIFHarness.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "KIFTestStep+KIFHarness.m"; sourceTree = "<group>"; };
+		3DF3FCD816A76E6000CA63D2 /* KIF.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = KIF.xcodeproj; path = ../../KIFHarness/KIF/KIF.xcodeproj; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,7 +63,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3D28CE9C16A73AD00014CDC9 /* libKIF.a in Frameworks */,
+				3D2534B716A7712000A8D1BB /* libKIF.a in Frameworks */,
 				3D28CDE316A72D160014CDC9 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -119,20 +119,20 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		3D28CE9116A73AA70014CDC9 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				3D28CE9816A73AA70014CDC9 /* libKIF.a */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 		3D28CEAB16A73D610014CDC9 /* KIF Framework */ = {
 			isa = PBXGroup;
 			children = (
-				3D28CE9016A73AA70014CDC9 /* KIF.xcodeproj */,
+				3DF3FCD816A76E6000CA63D2 /* KIF.xcodeproj */,
 			);
 			name = "KIF Framework";
+			sourceTree = "<group>";
+		};
+		3DF3FCD916A76E6000CA63D2 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3DF3FCE016A76E6000CA63D2 /* libKIF.a */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -149,7 +149,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				3D28CE9B16A73ACC0014CDC9 /* PBXTargetDependency */,
+				3D2534B416A7711D00A8D1BB /* PBXTargetDependency */,
 			);
 			name = KIFHarness;
 			productName = KIFHarness;
@@ -177,8 +177,8 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
-					ProductGroup = 3D28CE9116A73AA70014CDC9 /* Products */;
-					ProjectRef = 3D28CE9016A73AA70014CDC9 /* KIF.xcodeproj */;
+					ProductGroup = 3DF3FCD916A76E6000CA63D2 /* Products */;
+					ProjectRef = 3DF3FCD816A76E6000CA63D2 /* KIF.xcodeproj */;
 				},
 			);
 			projectRoot = "";
@@ -189,11 +189,11 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		3D28CE9816A73AA70014CDC9 /* libKIF.a */ = {
+		3DF3FCE016A76E6000CA63D2 /* libKIF.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
 			path = libKIF.a;
-			remoteRef = 3D28CE9716A73AA70014CDC9 /* PBXContainerItemProxy */;
+			remoteRef = 3DF3FCDF16A76E6000CA63D2 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -212,10 +212,10 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		3D28CE9B16A73ACC0014CDC9 /* PBXTargetDependency */ = {
+		3D2534B416A7711D00A8D1BB /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = KIF;
-			targetProxy = 3D28CE9A16A73ACC0014CDC9 /* PBXContainerItemProxy */;
+			targetProxy = 3D2534B316A7711D00A8D1BB /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
