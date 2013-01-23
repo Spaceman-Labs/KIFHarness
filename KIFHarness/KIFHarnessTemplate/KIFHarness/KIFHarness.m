@@ -10,7 +10,26 @@
 #import "KIFTestScenario+KIFHarness.h"
 #import "KIFTestStep+KIFHarness.h"
 
+#ifdef KIFJunitTestLoggerEnabled
+#import "KIFJunitTestLogger.h"
+#endif
+
 @implementation KIFHarness
+
+- (id)init
+{
+	self = [super init];
+	if (nil == self) {
+		return nil;
+	}
+	
+#ifdef KIFJunitTestLoggerEnabled
+	KIFJunitTestLogger *logger = [[KIFJunitTestLogger alloc] init];
+	[self registerLogger:logger];
+#endif
+	
+	return self;
+}
 
 - (void)initializeScenarios;
 {
