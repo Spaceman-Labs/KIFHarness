@@ -6,7 +6,7 @@ set -u
 usage ()
 {
     cat >&2 <<EOF
-Usage: ${0##*/} [-vd] [-w /path/to/waxsim] [-o output_path] [-j junit_results_path] /path/to/application.app
+Usage: ${0##*/} [-va] [-w /path/to/waxsim] [-o output_path] [-j junit_results_path] /path/to/application.app
 EOF
 }
 
@@ -14,10 +14,12 @@ verbose="NO"
 waxSimPath=`which waxsim`
 outputPath="/tmp/KIF-$$.out"
 junitPath=""
+alwaysReturnSucessful="NO"
 
-while getopts "vw:o:j:" o; do 
+while getopts "vaw:o:j:" o; do 
     case "$o" in
         v ) verbose="YES" ;;
+        a ) alwaysReturnSucessful="YES" ;;
         w ) waxSimPath="$OPTARG" ;;
         o ) outputPath="$OPTARG" ;;
         j ) junitPath="$OPTARG" ;;
@@ -43,6 +45,9 @@ fi
 
 if [ $verbose == "YES" ]; then
 	echo "Using WaxSim at path: $waxSimPath"
+	if [ "$alwaysReturnSucessful" == "YES" ]; then
+		echo "Will return successful (error code 0) regardless of test results."
+	fi
 fi
 
 if [ $verbose == "YES" ]; then
@@ -52,13 +57,7 @@ fi
 if [ "$junitPath" != "" ]; then
 	if [ $verbose == "YES" ]; then
 		echo "Writing JUnit results to: $junitPath"
-	fi
-	
-	export KIFHarnessJUnitPath="$junitPath"
-	echo "env xxxx"
-	echo `env | grep KIFHarnessJUnitPath`
-	echo "env xxxx"
-	
+	fi	
 fi
 
 
@@ -76,8 +75,8 @@ fi
 `$waxSimPath -f "iphone" "$1" -e KIFHarnessJUnitPath="/users/jerryhjones/desktop/wtf" > $outputPath 2>&1`
 
 # WaxSim hides the return value from the app, so to determine success we search for a "no failures" line
-failCount=`grep -o "TESTING FINISHED: \([\1-9]*\) failures" $outputPath | sed "s/[^0-9]//g"`
-junitFile=`grep "JUNIT XML RESULTS AT " /Users/jerryhjones/Desktop/tests-results.txt | sed "s/.*JUNIT XML RESULTS AT //"`
+failCount=`grep -o "TESTING FINISHED: \([\0-9]*\) failures" $outputPath | sed "s/[^0-9]//g"`
+junitFile=`grep "JUNIT XML RESULTS AT " $outputPath | sed "s/.*JUNIT XML RESULTS AT //"`
 
 if [ $verbose == "YES" ]; then
 	echo "Failures: $failCount"
@@ -88,7 +87,7 @@ if [ -f "$junitFile" ]; then
 	mv "$junitFile" "$junitPath"
 fi
 
-if [ noFailsCount!="0" ]; then
+if [ "$failCount" != "0" ] && [ "$alwaysReturnSucessful" != "YES" ]; then
 	exit 1
 else
 	exit 0
