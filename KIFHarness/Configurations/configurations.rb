@@ -1,5 +1,6 @@
 #!/usr/bin/env ruby
 require 'fileutils'
+require 'pathname'
 
 def verify_configuration_directory(directory)
   if !File.directory?(directory)
@@ -30,13 +31,21 @@ def setup_merge_configuration(directory, force)
   end
 end
 
+def smashed_file_name(file)
+  file.gsub(/[^0-9a-z ]/i, '')
+end
 
 def merge_files(directory, files)
+  file_names = Array.new
+  keys = Array.new
   merge_path = directory + "Config-Merged.xcconfig"
   puts "remove file: " + merge_path
   out_file = File.open(merge_path, 'w')
   
   files.each do |path|
+    file_name = Pathname.new(path).basename.to_s
+    smashed_file_name = smashed_file_name(file_name)
+    file_names.push(file_name)
     inputPath = nil
     localPath = directory + path
     if File.exists?(path)
@@ -55,9 +64,33 @@ def merge_files(directory, files)
 // **** Path: " + path + " ****
 //\n\n"
 
-      out_file << File.open(inputPath, 'r').read
+      text = File.open(inputPath).read
+      text.gsub!(/\r\n?/, "\n")
+
+      text.each_line do |line|
+        next if line.strip.start_with?("//") || line.strip.length == 0
+        
+        variable_name = /[^= ]*/.match(line.strip).to_s
+        keys.push(variable_name)
+        out_file << line.strip.sub(/([^=])*?/, smashed_file_name + '\1') + "\n"
+      end
+
+      # out_file << File.open(inputPath, 'r').read
       
     end
+  end
+    
+  out_file << "//
+// **** Added By Configurations.rb ****
+//\n\n"
+  
+  keys.each do |key|
+    out_file << key + " ="
+    file_names.each do |file|
+      smashed_file_name = smashed_file_name(file)
+      out_file << " $(" + smashed_file_name + key + ")"
+    end
+    out_file << "\n"
   end
   
   out_file.close
